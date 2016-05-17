@@ -12,6 +12,5 @@ describe('db2 imported features', function() {
 
   require('loopback-datasource-juggler/test/common.batch.js');
   require('loopback-datasource-juggler/test/include.test.js');
-  require('loopback-connector-db2/test/db2.connection.test.js');
 
 });
