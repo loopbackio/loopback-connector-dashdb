@@ -1,6 +1,6 @@
 #loopback-connector-dashdb
 
-[IBM® DASHDB®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
+[IBM® DashDB®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
 It is optimized to deliver industry-leading performance while lowering costs.  The `loopback-connector-dashdb.
 module is the LoopBack connector for dashDB.
 
