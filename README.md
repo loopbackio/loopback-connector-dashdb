@@ -1,34 +1,34 @@
-#loopback-connector-db2
+#loopback-connector-dashdb
 
-[IBM® DB2®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
-It is optimized to deliver industry-leading performance while lowering costs.  The `loopback-connector-db2`
-module is the LoopBack connector for DB2.
+[IBM® DASHDB®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
+It is optimized to deliver industry-leading performance while lowering costs.  The `loopback-connector-dashdb.
+module is the LoopBack connector for dashDB.
 
-The LoopBack DB2 connector supports:
+The LoopBack DashDB connector supports:
 
 - All [CRUD operations](https://docs.strongloop.com/display/LB/Creating%2C+updating%2C+and+deleting+data).
 - [Queries](https://docs.strongloop.com/display/LB/Querying+data) with fields, limit, order, skip and where filters.
-- All supported DB2 LUW versions as well as dashDB.  Note for dashDB set supportDashDB in the loopback datasource definition.  Column organized tables are not supported.
+- All supported DASHDB LUW versions as well as dashDB.  Note for dashDB set supportDashDB in the loopback datasource definition.  Column organized tables are not supported.
 
 ## Installation
 
 Enter the following in the top-level directory of your LoopBack application:
 
 ```
-$ npm install loopback-connector-db2 --save
+$ npm install loopback-connector-dashdb --save
 ```
 
 The `--save` option adds the dependency to the application's `package.json` file.
 
 ## Configuration
 
-Use the [data source generator](https://docs.strongloop.com/display/LB/Data+source+generator) (`slc loopback:datasource`) to add the DB2 data source to your application.
+Use the [data source generator](https://docs.strongloop.com/display/LB/Data+source+generator) (`slc loopback:datasource`) to add the DASHDB data source to your application.
 The entry in the application's `server/datasources.json` will look something like this:
 
 ```
 "mydb": {
   "name": "mydb",
-  "connector": "db2"
+  "connector": "dashdb"
 }
 ```
 
@@ -37,11 +37,11 @@ Edit `server/datasources.json` to add other supported properties as required:
 ```
 "mydb": {
   "name": "mydb",
-  "connector": "db2",
+  "connector": "dashdb",
   "username": <username>,
   "password": <password>,
   "database": <database name>,
-  "hostname": <db2 server hostname>,
+  "hostname": <dashdb server hostname>,
   "port":     <port number>
 }
 ```
@@ -52,11 +52,11 @@ Property       | Type    | Description
 ---------------| --------| --------
 database       | String  | Database name
 schema         | String  | Specifies the default schema name that is used to qualify unqualified database objects in dynamically prepared SQL statements. The value of this property sets the value in the CURRENT SCHEMA special register on the database server. The schema name is case-sensitive, and must be specified in uppercase characters
-username       | String  | DB2 Username
-password       | String  | DB2 password associated with the username above
-hostname       | String  | DB2 server hostname or IP address
-port           | String  | DB2 server TCP port number
-useLimitOffset | Boolean | LIMIT and OFFSET must be configured on the DB2 server before use (compatibility mode)
+username       | String  | DASHDB Username
+password       | String  | DASHDB password associated with the username above
+hostname       | String  | DASHDB server hostname or IP address
+port           | String  | DASHDB server TCP port number
+useLimitOffset | Boolean | LIMIT and OFFSET must be configured on the DASHDB server before use (compatibility mode)
 supportDashDB  | Boolean | Create ROW ORGANIZED tables to support dashDB.
 
 
@@ -65,17 +65,17 @@ For example:
 
 ```
 var DataSource = require('loopback-datasource-juggler').DataSource;
-var DB2 = require('loopback-connector-db2');
+var DASHDB = require('loopback-connector-dashdb');
 
 var config = {
-  username: process.env.DB2_USERNAME,
-  password: process.env.DB2_PASSWORD,
-  hostname: process.env.DB2_HOSTNAME,
+  username: process.env.DASHDB_USERNAME,
+  password: process.env.DASHDB_PASSWORD,
+  hostname: process.env.DASHDB_HOSTNAME,
   port: 50000,
   database: 'SQLDB',
 };
 
-var db = new DataSource(DB2, config);
+var db = new DataSource(DASHDB, config);
 
 var User = db.define('User', {
   name: { type: String },
