@@ -3,6 +3,7 @@
 // This file is licensed under the Artistic License 2.0.
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
+var g = require('../lib/globalize');
 var DataSource = require('loopback-datasource-juggler').DataSource;
 var DASHDB = require('../'); // loopback-connector-dashdb
 
@@ -37,6 +38,6 @@ db.autoupdate('User', function(err) {
   });
 
   User.destroyAll(function() {
-    console.log('example complete');
+    g.log('example complete');
   });
 });
