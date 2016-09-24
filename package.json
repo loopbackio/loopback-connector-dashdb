@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/strongloop/loopback-connector-dashdb",
   "bugs": {
-    "url": "https://github.com/strongloop/loopback-connector-dashdb/issues"
+    "url": "https://github.com/strongloop/loopback/issues"
   },
   "license": "Artistic-2.0"
 }
