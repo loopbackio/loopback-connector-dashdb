@@ -1,3 +1,7 @@
+**PLEASE CREATE ISSUES AT https://github.com/strongloop/loopback/issues**
+
+---
+
 #loopback-connector-dashdb
 
 [IBM® DashDB®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
