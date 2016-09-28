@@ -6,10 +6,6 @@
 'use strict';
 require('./init.js');
 
-if (process.env.CI) {
-  return;
-}
-
 /* eslint-env node, mocha */
 describe('db2 imported features', function() {
   require('loopback-datasource-juggler/test/common.batch.js');
