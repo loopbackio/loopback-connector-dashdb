@@ -4,11 +4,6 @@
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
 'use strict';
-if (process.env.CI) {
-  return;
-}
-
-var describe = require('./describe');
 
 /* eslint-env node, mocha */
 process.env.NODE_ENV = 'test';
