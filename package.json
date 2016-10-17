@@ -13,7 +13,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "ldd ./node_modules/loopback-ibmdb/node_modules/ibm_db/installer/clidriver/lib/libdb2.so.1",
+    "test": "ldd ./node_modules/loopback-ibmdb/node_modules/ibm_db/installer/clidriver/lib/libdb2.so.1; dpkg --get-selections |grep xml",
     "debug": "mocha --timeout 20000",
     "posttest": "npm run lint"
   },
