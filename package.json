@@ -13,7 +13,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --timeout 20000",
+    "test": "ldd ./node_modules/loopback-ibmdb/node_modules/ibm_db/installer/clidriver/lib/libdb2.so.2",
+    "debug": "mocha --timeout 20000",
     "posttest": "npm run lint"
   },
   "dependencies": {
