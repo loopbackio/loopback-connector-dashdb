@@ -1,6 +1,9 @@
 {
   "name": "loopback-connector-dashdb",
   "version": "1.0.17",
+  "publishConfig": {
+    "tag": "lts"
+  },
   "description": "LoopBack Connector for IBM dashDB",
   "keywords": [
     "IBM",
