@@ -1,7 +1,10 @@
 {
   "name": "loopback-connector-dashdb",
-  "version": "1.0.17",
+  "version": "3.0.0-alpha.1",
   "description": "LoopBack Connector for IBM dashDB",
+  "engines": {
+    "node": ">=4"
+  },
   "keywords": [
     "IBM",
     "StrongLoop",
