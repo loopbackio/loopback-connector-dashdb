@@ -1,3 +1,33 @@
+2016-12-01, Version 1.0.18
+==========================
+
+ * Remove lazy connect tests (Quentin Presley)
+
+ * Enable pooling (Quentin Presley)
+
+ * Revert loopback 2.x (siddhipai)
+
+ * Revert dev-dependency on loopback to 2.x (Siddhi Pai)
+
+ * Set publish tag to "lts" (Siddhi Pai)
+
+ * Put issues tab back (siddhipai)
+
+ * Fix issues redirection in package.json (Siddhi Pai)
+
+ * Remove issues warning from README.md (Siddhi Pai)
+
+ * Update README.md (Rand McKinney)
+
+ * Add translation files (Candy)
+
+ * Update README doc links (Candy)
+
+ * Add connectorCapabilities global object (#14) (Nicholas Duffy)
+
+ * Remove path dependency (Candy)
+
+
 2016-09-27, Version 1.0.17
 ==========================
 
