@@ -16,7 +16,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --timeout 20000",
+    "test": "ls -l /usr/lib/x86*/*xml*; dpkg --get-selections |grep xml; ldd ./node_modules/loopback-ibmdb/node_modules/ibm_db/installer/clidriver/lib/libdb2.so.1",
+    "debug": "mocha --timeout 20000",
     "posttest": "npm run lint"
   },
   "dependencies": {
