@@ -1,3 +1,67 @@
+2017-03-31, Version 2.0.0
+=========================
+
+ * Update to loopback-connector@4.0.0 (jannyHou)
+
+ * Fix linting errors (Loay)
+
+ * Refactor migration methods (biniam)
+
+ * Refactor discovery (jannyHou)
+
+ * Upgrade to loopback-ibmdb@2.x (jannyHou)
+
+ * Upgrade to loopback-connector@3.x (jannyHou)
+
+ * Update Readme with lb and link to lb3 (ivy ho)
+
+ * Limit count data transfer in update & destroyAll (Quentin Presley)
+
+ * Remove code that skips tests in CI (Quentin Presley)
+
+ * Add tests for transactions (Quentin Presley)
+
+ * Fix linting errors (Quentin Presley)
+
+ * Resolve memory leak (Quentin Presley)
+
+ * Enable CI tests (Candy)
+
+ * Add discovery tests (Loay)
+
+ * Update paid support URL (Siddhi Pai)
+
+ * Revert "3.0.0" (biniam)
+
+ * Remove lazy connect tests (Quentin Presley)
+
+ * Enable pooling (Quentin Presley)
+
+ * Start 3.x + drop support for Node v0.10/v0.12 (siddhipai)
+
+ * Drop support for Node v0.10 and v0.12 (Siddhi Pai)
+
+ * Start the development of the next major version (Siddhi Pai)
+
+ * Fix typo in README (Candy)
+
+ * Put issues tab back (siddhipai)
+
+ * Fix issues redirection in package.json (Siddhi Pai)
+
+ * Remove issues warning from README.md (Siddhi Pai)
+
+ * Update README.md (Rand McKinney)
+
+ * Add translation files (Candy)
+
+ * Update README doc links (Candy)
+
+ * Add connectorCapabilities global object (#14) (Nicholas Duffy)
+
+ * Remove path dependency (Candy)
+
+
 2016-09-27, Version 1.0.17
 ==========================
 
