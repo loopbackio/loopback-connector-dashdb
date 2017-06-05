@@ -30,10 +30,10 @@ describe('parameterized SQL', function() {
     });
   });
   it('does not return result with SQL injection', function(done) {
-    // generate injectedSQL as `SELECT * FROM Cusotmer WHERE name ="" or ""=""`
-    // ""="" is always true
+    // generate injectedSQL as `SELECT * FROM Customer WHERE name ="" or 1=1`
+    // 1=1 is always true
     var injectedFilter = {
-      where: {or: [{name: ''}, {'': ''}]},
+      where: {or: [{name: ''}, {1: 1}]},
     };
     Customer.find(injectedFilter, function(err, result) {
       if (err) return done(err);
