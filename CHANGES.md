@@ -1,3 +1,15 @@
+2017-06-13, Version 2.0.1
+=========================
+
+ * ParameterizeSQL (#48) (Janny)
+
+ * Add info on how to run tests (ssh24)
+
+ * add .travis.yml (Diana Lau)
+
+ * test CI (Diana Lau)
+
+
 2017-03-31, Version 2.0.0
 =========================
 
