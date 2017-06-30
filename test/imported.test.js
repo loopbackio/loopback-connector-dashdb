@@ -6,7 +6,7 @@
 'use strict';
 
 /* eslint-env node, mocha */
-describe('db2 imported features', function() {
+describe('dashdb imported features', function() {
   before(function() {
     require('./init.js');
   });

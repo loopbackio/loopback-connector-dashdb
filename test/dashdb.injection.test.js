@@ -23,8 +23,8 @@ describe('parameterized SQL', function() {
     db.automigrate('Customer', function(err) {
       if (err) return done(err);
       var samples = [
-          {name: 'Zoe', pass: '123'},
-          {name: 'John', pass: '456'},
+        {name: 'Zoe', pass: '123'},
+        {name: 'John', pass: '456'},
       ];
       Customer.create(samples, done);
     });

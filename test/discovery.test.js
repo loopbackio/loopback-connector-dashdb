@@ -70,7 +70,7 @@ describe('discoverModels', function() {
             } else {
               models.forEach(function(m) {
                 assert.equal(m.owner.replace(/\s/g, '').toUpperCase(),
-                             config.username.replace(/\s/g, '').toUpperCase());
+                  config.username.replace(/\s/g, '').toUpperCase());
               });
               done(null, models);
             }
@@ -80,24 +80,27 @@ describe('discoverModels', function() {
 
   describe('Discover models excluding views', function() {
     it('should return an array of only tables', function(done) {
-      db.discoverModelDefinitions({views: false, limit: 3},
-        function(err, models) {
-          if (err) {
-            console.error(err);
-            done(err);
-          } else {
-            var views = false;
-            models.forEach(function(m) {
-              // console.dir(m);
-              if (m.type === 'view') {
-                views = true;
-              }
-            });
-            models.should.have.length(3);
-            assert(!views, 'Should not have views');
-            done(null, models);
-          }
-        });
+      db.discoverModelDefinitions({
+        owner: config.schema,
+        views: false,
+        limit: 3,
+      }, function(err, models) {
+        if (err) {
+          console.error(err);
+          done(err);
+        } else {
+          var views = false;
+          models.forEach(function(m) {
+            // console.dir(m);
+            if (m.type === 'view') {
+              views = true;
+            }
+          });
+          models.should.have.length(3);
+          assert(!views, 'Should not have views');
+          done(null, models);
+        }
+      });
     });
   });
 });
@@ -286,16 +289,16 @@ describe('Discover and build models', function() {
   it('should discover and build models',
     function(done) {
       db.discoverAndBuildModels('INVENTORY',
-                                {owner: config.schema,
-                                 visited: {},
-                                 associations: true},
+        {owner: config.schema,
+          visited: {},
+          associations: true},
         function(err, models) {
           if (err) {
             done();
           }
 
           assert(models.Inventory,
-                 'Inventory model should be discovered and built');
+            'Inventory model should be discovered and built');
           var schema = models.Inventory.definition;
           assert(
             schema.settings.dashdb.schema.replace(/\s/g, '') === config.schema);
