@@ -7,13 +7,23 @@ module.exports = require('should');
 
 var DataSource = require('loopback-datasource-juggler').DataSource;
 
+/** these are the env variables in jenkins **/
+if (process.env.CI && (process.env.BUILD_NUMBER || process.env.BUILD_ID) &&
+  (process.env.nodeVersion || process.env.node)) {
+  var buildNumber = process.env.BUILD_NUMBER || process.env.BUILD_ID;
+  var nodeVersion = process.env.nodeVersion || process.env.node;
+  var os = process.env.OS || process.platform;
+  var schemaName = 'SCHEMA' + buildNumber + '_' + os.toUpperCase() +
+    '_' + nodeVersion;
+}
+
 var config = {
   username: process.env.DASHDB_USERNAME,
   password: process.env.DASHDB_PASSWORD,
   hostname: process.env.DASHDB_HOSTNAME || 'localhost',
   port: process.env.DASHDB_PORTNUM || 60000,
   database: process.env.DASHDB_DATABASE || 'testdb',
-  schema: process.env.DASHDB_SCHEMA || 'STRONGLOOP',
+  schema: schemaName || process.env.DASHDB_SCHEMA || 'STRONGLOOP',
 };
 
 global.config = config;

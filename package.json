@@ -12,9 +12,10 @@
   ],
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint ./ && jscs ./",
-    "lint": "eslint ./ && jscs ./",
-    "test": "mocha --timeout 10000"
+    "lint": "eslint .",
+    "pretest": "node pretest.js",
+    "test": "mocha --timeout 10000 --require test/init.js",
+    "posttest": "node posttest.js"
   },
   "dependencies": {
     "debug": "^2.2.0",
@@ -23,15 +24,16 @@
     "async": "^1.5.0"
   },
   "devDependencies": {
-    "loopback-datasource-juggler": "^2.43.0",
-    "jscs": "^2.8.0",
+    "bluebird": "^2.9.9",
     "eslint": "^1.10.3",
     "eslint-config-strongloop": "^1.0.2",
+    "jscs": "^2.8.0",
+    "lodash": "^4.17.4",
+    "loopback-datasource-juggler": "^2.43.0",
     "mocha": "^2.3.4",
     "rc": "^1.1.5",
     "should": "^8.1.1",
-    "sinon": "^1.17.2",
-    "bluebird": "^2.9.9"
+    "sinon": "^1.17.2"
   },
   "repository": {
     "type": "git",
