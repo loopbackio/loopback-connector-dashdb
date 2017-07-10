@@ -10,13 +10,15 @@ module.exports = require('should');
 var DataSource = require('loopback-datasource-juggler').DataSource;
 
 /** these are the env variables in jenkins **/
-if (process.env.CI && (process.env.BUILD_NUMBER || process.env.BUILD_ID) &&
+if (process.env.CI && process.env.ghprbGhRepository &&
+  (process.env.BUILD_NUMBER || process.env.BUILD_ID) &&
   (process.env.nodeVersion || process.env.node)) {
+  var buildName = process.env.ghprbGhRepository.split('-')[2].toUpperCase();
   var buildNumber = process.env.BUILD_NUMBER || process.env.BUILD_ID;
   var nodeVersion = process.env.nodeVersion || process.env.node;
   var os = process.env.OS || process.platform;
-  var schemaName = 'SCHEMA' + buildNumber + '_' + os.toUpperCase() +
-    '_' + nodeVersion;
+  var schemaName = 'SCHEMA' + buildNumber + '_' + buildName +
+    '_' + os.toUpperCase() + '_' + nodeVersion;
 }
 
 var config = {
