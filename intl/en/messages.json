@@ -1,8 +1,5 @@
 {
-  "70fcd25148a85f5c8894d9179f1f47bc": "Function not supported",
-  "80a32e80cbed65eba2103201a7c94710": "Model not found: {0}",
   "a4eb9d2c3bac1b4f7adff30970ee26cc": "options must be an object: {0}",
-  "b0262f0bd6f0836e16e1a0aa78953475": "Invalid isolationLevel: {0}",
   "d07486ef2392ae07264a7e307a1cad7b": "Column organized tables are not currently supported",
   "f93ce20d178e2d16f45ed0a1a117b990": "example complete"
 }
