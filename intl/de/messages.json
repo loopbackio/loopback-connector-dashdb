@@ -1,8 +1,5 @@
 {
-  "70fcd25148a85f5c8894d9179f1f47bc": "Funktion nicht unterstützt",
-  "80a32e80cbed65eba2103201a7c94710": "Modell nicht gefunden: {0}",
   "a4eb9d2c3bac1b4f7adff30970ee26cc": "'options' muss ein Objekt sein: {0}",
-  "b0262f0bd6f0836e16e1a0aa78953475": "Ungültige isolationLevel: {0}",
   "d07486ef2392ae07264a7e307a1cad7b": "Nach Spalten organisierte Tabellen werden aktuell nicht unterstützt",
   "f93ce20d178e2d16f45ed0a1a117b990": "Beispiel abgeschlossen"
 }
