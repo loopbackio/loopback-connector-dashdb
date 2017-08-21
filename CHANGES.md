@@ -1,3 +1,31 @@
+2017-08-21, Version 2.0.2
+=========================
+
+ * Create Issue and PR Templates (#64) (Sakib Hasan)
+
+ * Update translated strings Q3 2017 (Allen Boone)
+
+ * Clean up old schemas in pretest (ssh24)
+
+ * Revert "Run posttest even when test fails" (Sakib Hasan)
+
+ * update translation file (Diana Lau)
+
+ * Add regex query tests and docs (ssh24)
+
+ * Add CODEOWNER file (Diana Lau)
+
+ * Run posttest even when test fails (ssh24)
+
+ * Fix repo name env variable (ssh24)
+
+ * Add build name to schema name (ssh24)
+
+ * Fix dashdb CI (ssh24)
+
+ * Require init on mocha args (ssh24)
+
+
 2017-06-13, Version 2.0.1
 =========================
 
