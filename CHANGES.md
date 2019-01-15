@@ -1,3 +1,19 @@
+2019-01-15, Version 2.0.3
+=========================
+
+ * remove .travis.yml (Diana Lau)
+
+ * Update dependencies (Quentin Presley)
+
+ * [WebFM] cs/pl/ru translation (candytangnb)
+
+ * chore:update license (Diana Lau)
+
+ * README: document connection pooling opts (Kevin Delisle)
+
+ * Add stalebot configuration (Kevin Delisle)
+
+
 2017-08-21, Version 2.0.2
 =========================
 
