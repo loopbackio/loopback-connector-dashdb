@@ -258,17 +258,20 @@ describe('Discover LDL schema from a table', function() {
 
           assert(schema.name === 'Inventory');
           assert(
-            schema.options.dashdb.schema.replace(/\s/g, '') === config.schema);
+            schema.options.dashdb.schema.replace(/\s/g, '') === config.schema
+          );
           assert(schema.options.dashdb.table === 'INVENTORY');
           assert(schema.properties.productId);
           assert(schema.properties.productId.required);
           assert(schema.properties.productId.type === 'String');
           assert(
-            schema.properties.productId.dashdb.columnName === 'PRODUCT_ID');
+            schema.properties.productId.dashdb.columnName === 'PRODUCT_ID'
+          );
           assert(schema.properties.locationId);
           assert(schema.properties.locationId.type === 'String');
           assert(
-            schema.properties.locationId.dashdb.columnName === 'LOCATION_ID');
+            schema.properties.locationId.dashdb.columnName === 'LOCATION_ID'
+          );
           assert(schema.properties.available);
           assert(schema.properties.available.required === false);
           assert(schema.properties.available.type === 'Number');
@@ -301,16 +304,19 @@ describe('Discover and build models', function() {
             'Inventory model should be discovered and built');
           var schema = models.Inventory.definition;
           assert(
-            schema.settings.dashdb.schema.replace(/\s/g, '') === config.schema);
+            schema.settings.dashdb.schema.replace(/\s/g, '') === config.schema
+          );
           assert(schema.settings.dashdb.table === 'INVENTORY');
           assert(schema.properties.productId);
           assert(schema.properties.productId.type === String);
           assert(
-            schema.properties.productId.dashdb.columnName === 'PRODUCT_ID');
+            schema.properties.productId.dashdb.columnName === 'PRODUCT_ID'
+          );
           assert(schema.properties.locationId);
           assert(schema.properties.locationId.type === String);
           assert(
-            schema.properties.locationId.dashdb.columnName === 'LOCATION_ID');
+            schema.properties.locationId.dashdb.columnName === 'LOCATION_ID'
+          );
           assert(schema.properties.available);
           assert(schema.properties.available.type === Number);
           assert(schema.properties.total);
