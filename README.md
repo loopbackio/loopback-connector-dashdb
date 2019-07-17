@@ -2,9 +2,9 @@
 
 [IBM® DashDB®]() is the database of choice for robust, enterprise-wide solutions handling high-volume workloads.
 It is optimized to deliver industry-leading performance while lowering costs.  The `loopback-connector-dashdb`
-module is the LoopBack connector for dashDB. 
+module is the LoopBack connector for dashDB.
 
-The LoopBack DashDB connector supports (fake change #2):   
+The LoopBack DashDB connector supports:   
 
 - All [CRUD operations](http://loopback.io/doc/en/lb3/Creating-updating-and-deleting-data.html).
 - [Queries](http://loopback.io/doc/en/lb3/Querying-data.html) with fields, limit, order, skip and where filters.
