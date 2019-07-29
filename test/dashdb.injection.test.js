@@ -11,7 +11,7 @@ process.env.NODE_ENV = 'test';
 require('./init.js');
 require('should');
 
-var db, Customer;
+let db, Customer;
 
 describe('parameterized SQL', function() {
   before(function(done) {
@@ -22,7 +22,7 @@ describe('parameterized SQL', function() {
     });
     db.automigrate('Customer', function(err) {
       if (err) return done(err);
-      var samples = [
+      const samples = [
         {name: 'Zoe', pass: '123'},
         {name: 'John', pass: '456'},
       ];
@@ -32,7 +32,7 @@ describe('parameterized SQL', function() {
   it('does not return result with SQL injection', function(done) {
     // generate injectedSQL as `SELECT * FROM Customer WHERE name ="" or 1=1`
     // 1=1 is always true
-    var injectedFilter = {
+    const injectedFilter = {
       where: {or: [{name: ''}, {1: 1}]},
     };
     Customer.find(injectedFilter, function(err, result) {

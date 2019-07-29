@@ -22,23 +22,23 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
-    "async": "^2.6.1",
-    "debug": "^3.1.0",
+    "async": "^3.1.0",
+    "debug": "^4.1.1",
     "loopback-connector": "^4.0.0",
     "loopback-ibmdb": "^2.3.0",
-    "strong-globalize": "^4.0.0"
+    "strong-globalize": "^5.0.0"
   },
   "devDependencies": {
     "bluebird": "^3.5.1",
-    "eslint": "^5.4.0",
-    "eslint-config-loopback": "^11.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-loopback": "^13.1.0",
     "lodash": "^4.17.10",
     "loopback-datasource-juggler": "^3.23.0",
-    "mocha": "^5.2.0",
+    "mocha": "^6.2.0",
     "ms": "^2.1.1",
     "rc": "^1.2.8",
     "should": "^13.2.3",
-    "sinon": "^6.1.5"
+    "sinon": "^7.3.2"
   },
   "repository": {
     "type": "git",
