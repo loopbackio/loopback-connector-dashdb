@@ -7,11 +7,11 @@
 
 /* eslint-env node, mocha */
 process.env.NODE_ENV = 'test';
-var assert = require('assert');
+const assert = require('assert');
 require('./init.js');
 
 // var DataSource = require('loopback-datasource-juggler').DataSource;
-var db, config;
+let db, config;
 
 before(function() {
   db = global.getDataSource();
@@ -45,7 +45,7 @@ describe('discoverModels', function() {
               console.error(err);
               done(err);
             } else {
-              var views = false;
+              let views = false;
               models.forEach(function(m) {
                 // console.dir(m);
                 if (m.type === 'view') {
@@ -89,7 +89,7 @@ describe('discoverModels', function() {
           console.error(err);
           done(err);
         } else {
-          var views = false;
+          let views = false;
           models.forEach(function(m) {
             // console.dir(m);
             if (m.type === 'view') {
@@ -119,7 +119,7 @@ describe('Discover models including other users', function() {
           console.error(err);
           done(err);
         } else {
-          var others = false;
+          let others = false;
           models.forEach(function(m) {
             // console.dir(m);
             if (m.owner !== config.schema) {
@@ -302,7 +302,7 @@ describe('Discover and build models', function() {
 
           assert(models.Inventory,
             'Inventory model should be discovered and built');
-          var schema = models.Inventory.definition;
+          const schema = models.Inventory.definition;
           assert(
             schema.settings.dashdb.schema.replace(/\s/g, '') === config.schema
           );

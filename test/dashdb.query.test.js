@@ -8,10 +8,10 @@
 /* eslint-env node, mocha */
 process.env.NODE_ENV = 'test';
 require('./init.js');
-var assert = require('assert');
-var DataSource = require('loopback-datasource-juggler').DataSource;
+const assert = require('assert');
+const DataSource = require('loopback-datasource-juggler').DataSource;
 
-var db, config, SimplePost;
+let db, config, SimplePost;
 
 describe('query test', function() {
   before(function(done) {
@@ -168,7 +168,7 @@ describe('query test', function() {
   });
 });
 
-var data = [{
+const data = [{
   title: 'Post1',
   content: 'Hello world!',
 }, {

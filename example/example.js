@@ -5,11 +5,11 @@
 
 'use strict';
 
-var g = require('../lib/globalize');
-var DataSource = require('loopback-datasource-juggler').DataSource;
-var DASHDB = require('../'); // loopback-connector-dashdb
+const g = require('../lib/globalize');
+const DataSource = require('loopback-datasource-juggler').DataSource;
+const DASHDB = require('../'); // loopback-connector-dashdb
 
-var config = {
+const config = {
   username: process.env.DASHDB_USERNAME,
   password: process.env.DASHDB_PASSWORD,
   hostname: process.env.DASHDB_HOSTNAME,
@@ -17,9 +17,9 @@ var config = {
   database: 'SQLDB',
 };
 
-var db = new DataSource(DASHDB, config);
+const db = new DataSource(DASHDB, config);
 
-var User = db.define('User', {name: {type: String}, email: {type: String},
+const User = db.define('User', {name: {type: String}, email: {type: String},
 });
 
 db.autoupdate('User', function(err) {

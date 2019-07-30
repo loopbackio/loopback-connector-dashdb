@@ -11,9 +11,9 @@ process.env.NODE_ENV = 'test';
 require('./init.js');
 require('should');
 
-var Transaction = require('loopback-connector').Transaction;
+const Transaction = require('loopback-connector').Transaction;
 
-var db, Post;
+let db, Post;
 
 describe('transactions', function() {
   describe('commit and rollback', function() {
@@ -27,7 +27,7 @@ describe('transactions', function() {
       db.automigrate('PostTX', done);
     });
 
-    var currentTx;
+    let currentTx;
     // Return an async function to start a transaction and create a post
     function createPostInTx(post) {
       return function(done) {
@@ -51,7 +51,7 @@ describe('transactions', function() {
     // records to equal to the count
     function expectToFindPosts(where, count, inTx) {
       return function(done) {
-        var options = {};
+        const options = {};
         if (inTx) {
           options.transaction = currentTx;
         }
@@ -65,7 +65,7 @@ describe('transactions', function() {
     }
 
     describe('commit', function() {
-      var post = {title: 't1', content: 'c1'};
+      const post = {title: 't1', content: 'c1'};
       before(createPostInTx(post));
 
       it('should not see the uncommitted insert',
@@ -82,7 +82,7 @@ describe('transactions', function() {
     });
 
     describe('rollback', function() {
-      var post = {title: 't2', content: 'c2'};
+      const post = {title: 't2', content: 'c2'};
       before(createPostInTx(post));
 
       it('should not see the uncommitted insert',
