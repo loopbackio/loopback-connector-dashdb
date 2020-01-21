@@ -46,14 +46,11 @@ describe('dml', function() {
       const rec = {aFloat: 42.234567};
       before(createRecInFP(rec));
 
-      it('should fail with a specific SQL error', function(done) {
-        FloatingPoint.updateAll(rec, {aFloat: 42.234567890123456789},
-          function(err, info) {
-            if (err) {
-              err.state.should.be.eql('HY094');
-              done();
-            }
-          });
+      it('should fail with a specific SQL error', async function() {
+        await FloatingPoint.updateAll(rec, {aFloat: 42.234567890123456789})
+          .should.be.rejectedWith(
+            '[IBM][CLI Driver] CLI0135E  Invalid scale value. SQLSTATE=HY094',
+          );
       });
     });
   });
