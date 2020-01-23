@@ -1,4 +1,26 @@
-2019-01-15, Version 2.0.3
+2020-01-23, Version 2.0.4
+=========================
+
+ * fix: add tests for custom column name for id (Dominique Emond)
+
+ * chore: improve issue and PR templates (Nora)
+
+ * chore: update CODEOWNERS (Nora)
+
+ * chore: fix eslint violations (Nora)
+
+ * chore: update deps and fix eslint violations (Nora)
+
+ * drop support for node 6 (Nora)
+
+ * chore: improve steps for running 'npm test' (Dominique Emond)
+
+ * fix: CI failures (Dominique Emond)
+
+ * chore: update copyrights years (Agnes Lin)
+
+
+2019-01-14, Version 2.0.3
 =========================
 
  * remove .travis.yml (Diana Lau)
