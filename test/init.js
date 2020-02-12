@@ -1,4 +1,4 @@
-// Copyright IBM Corp. 2016,2019. All Rights Reserved.
+// Copyright IBM Corp. 2016,2020. All Rights Reserved.
 // Node module: loopback-connector-dashdb
 // This file is licensed under the Artistic License 2.0.
 // License text available at https://opensource.org/licenses/Artistic-2.0
@@ -7,7 +7,8 @@
 
 module.exports = require('should');
 
-const DataSource = require('loopback-datasource-juggler').DataSource;
+const juggler = require('loopback-datasource-juggler');
+let DataSource = juggler.DataSource;
 
 let schemaName;
 
@@ -34,9 +35,20 @@ const config = {
 
 global.config = config;
 
+let db;
 global.getDataSource = global.getSchema = function(options) {
-  const db = new DataSource(require('../'), config);
+  db = new DataSource(Connector, global.config);
+  db.log = function(a) {
+    console.log(a);
+  };
   return db;
+};
+
+global.resetDataSourceClass = function(ctor) {
+  DataSource = ctor || juggler.DataSource;
+  const promise = db ? db.disconnect() : Promise.resolve();
+  db = undefined;
+  return promise;
 };
 
 global.connectorCapabilities = {
