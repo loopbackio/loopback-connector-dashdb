@@ -7,10 +7,11 @@
 
 module.exports = require('should');
 
+const Connector = require('../');
 const juggler = require('loopback-datasource-juggler');
 let DataSource = juggler.DataSource;
 
-let schemaName;
+let schemaName, db;
 
 /** these are the env variables in jenkins **/
 if (process.env.CI && process.env.PACKAGE_NAME &&
@@ -35,7 +36,6 @@ const config = {
 
 global.config = config;
 
-let db;
 global.getDataSource = global.getSchema = function(options) {
   db = new DataSource(Connector, global.config);
   db.log = function(a) {
