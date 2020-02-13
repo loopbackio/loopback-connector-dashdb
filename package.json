@@ -18,7 +18,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "pretest": "node pretest.js",
-    "test": "mocha --timeout 20000 --require test/init.js",
+    "test": "mocha --timeout 60000 --require test/init.js test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
     "posttest": "npm run lint"
   },
   "dependencies": {
@@ -30,10 +30,12 @@
   },
   "devDependencies": {
     "bluebird": "^3.5.1",
-    "eslint": "^6.1.0",
+    "eslint": "^6.8.0",
     "eslint-config-loopback": "^13.1.0",
+    "juggler-v3": "file:./deps/juggler-v3",
+    "juggler-v4": "file:./deps/juggler-v4",
+    "loopback-datasource-juggler": "^3.0.0 || ^4.0.0",
     "lodash": "^4.17.10",
-    "loopback-datasource-juggler": "^3.23.0",
     "mocha": "^6.2.0",
     "ms": "^2.1.1",
     "rc": "^1.2.8",
