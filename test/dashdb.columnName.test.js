@@ -11,17 +11,18 @@ process.env.NODE_ENV = 'test';
 require('./init.js');
 const assert = require('assert');
 
-let id, db, Book;
+let bookId, db, Book;
 const BOOK_TITLE = 'Rocky I';
 const REVISED_BOOK_TITLE = 'Rocky II';
 
 /*
-   This test suite is to test the changes surrounding the fix
-   in loopback-ibmdb related to issue :
+   This test suite is to test the changes surrounding the fixes
+   in loopback-ibmdb related to issues :
    https://github.com/strongloop/loopback-ibmdb/issues/79
+   https://github.com/strongloop/loopback-ibmdb/issues/84
 */
 
-describe('replaceById with custom column name for id', () => {
+describe('replaceById with custom column name for bookId', () => {
   // 'table' option specified since we want a table 'BOOK'
   // to be created for model 'Book'
   const BOOK_TABLE_OPTIONS = {
@@ -56,15 +57,23 @@ describe('replaceById with custom column name for id', () => {
     const newBook = await Book.create({title: BOOK_TITLE});
     assert(newBook);
     assert.equal(newBook.title, BOOK_TITLE);
-    id = newBook.id;
-    const updatedBook = await Book.replaceById(id, {title: REVISED_BOOK_TITLE});
+    // use the bookId (id property) to ensure
+    // replaceById and find return same value
+    bookId = newBook.bookId;
+    // eslint-disable-next-line max-len
+    const updatedBook = await Book.replaceById(bookId, {title: REVISED_BOOK_TITLE});
     assert(updatedBook);
-    assert.equal(updatedBook.id, id);
+    assert.equal(updatedBook.bookId, bookId);
     assert.equal(updatedBook.title, REVISED_BOOK_TITLE);
+    // perform a get and see if bookId is still same.
+    const foundBooks = await Book.find({where: {content: {like: 'Rocky%'}}});
+    assert(foundBooks);
+    assert.equal(foundBooks.length, 1);
+    assert.equal(foundBooks[0].bookId, bookId);
   });
 });
 
-describe('replaceById with model name for id', () => {
+describe('replaceById with model name for bookId', () => {
   // No 'table' option specified since we want a table 'Book'
   // to be created for model 'Book'
 
@@ -89,10 +98,18 @@ describe('replaceById with model name for id', () => {
     const newBook = await Book.create({title: BOOK_TITLE});
     assert(newBook);
     assert.equal(newBook.title, BOOK_TITLE);
-    id = newBook.id;
-    const updatedBook = await Book.replaceById(id, {title: REVISED_BOOK_TITLE});
+    // use the bookId (id property) to ensure
+    // replaceById and find return same value
+    bookId = newBook.bookId;
+    // eslint-disable-next-line max-len
+    const updatedBook = await Book.replaceById(bookId, {title: REVISED_BOOK_TITLE});
     assert(updatedBook);
-    assert.equal(updatedBook.id, id);
+    assert.equal(updatedBook.bookId, bookId);
     assert.equal(updatedBook.title, REVISED_BOOK_TITLE);
+    // perform a get and see if bookId is still same.
+    const foundBooks = await Book.find({where: {content: {like: 'Rocky%'}}});
+    assert(foundBooks);
+    assert.equal(foundBooks.length, 1);
+    assert.equal(foundBooks[0].bookId, bookId);
   });
 });
