@@ -1,3 +1,19 @@
+2020-03-18, Version 2.0.5
+=========================
+
+ * confirm id is same after replace (Dominique Emond)
+
+ * Exclude 'deps' and '.github' from npm publish (Dominique Emond)
+
+ * Test should fail if no error is thrown (Robin Betjes)
+
+ * prevent read from undefined in case of error (Robin Betjes)
+
+ * run shared test from juggler for v3 and v4 (Agnes Lin)
+
+ * chore: update copyrights year (Diana Lau)
+
+
 2020-01-23, Version 2.0.4
 =========================
 
