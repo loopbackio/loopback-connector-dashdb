@@ -6,8 +6,6 @@
     "node": ">=8.9"
   },
   "keywords": [
-    "IBM",
-    "StrongLoop",
     "LoopBack",
     "DB2",
     "DataSource",
@@ -50,11 +48,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/strongloop/loopback-connector-dashdb.git"
+    "url": "git://github.com/loopbackio/loopback-connector-dashdb.git"
   },
-  "homepage": "https://github.com/strongloop/loopback-connector-dashdb",
+  "homepage": "https://github.com/loopbackio/loopback-connector-dashdb",
   "bugs": {
-    "url": "https://github.com/strongloop/loopback-connector-dashdb/issues"
+    "url": "https://github.com/loopbackio/loopback-connector-dashdb/issues"
   },
   "license": "Artistic-2.0",
   "author": "IBM Corp."
