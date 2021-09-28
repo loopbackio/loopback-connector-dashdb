@@ -29,7 +29,7 @@ const config = {
   username: process.env.DASHDB_USERNAME,
   password: process.env.DASHDB_PASSWORD,
   hostname: process.env.DASHDB_HOSTNAME || 'localhost',
-  port: process.env.DASHDB_PORTNUM || 60000,
+  port: process.env.DASHDB_PORTNUM || 50000,
   database: process.env.DASHDB_DATABASE || 'testdb',
   schema: schemaName || process.env.DASHDB_SCHEMA || 'STRONGLOOP',
 };
